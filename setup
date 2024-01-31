@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
+thisdir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+target_dir=~/.vim
+
+if [[ -h $target_dir ]]; then # file is a symlink
+    rm $target_dir
+elif [[ -e $target_dir ]]; then
+    count=0
+    while [[ -e $target_dir.$count ]]; do
+        (( count+=1 ))
+    done
+    mv $target_dir{,.bak.$count}
+fi
+
+ln -s "$thisdir" $target_dir
