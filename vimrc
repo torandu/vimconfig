@@ -53,7 +53,7 @@ set smartindent
 set wildmode=longest,list,full
 
 set laststatus=2
-set statusline=%f\ %l/%L\ %p%%\ %{&paste?'[PASTE]':''}
+set statusline=%f\ %l/%L,c%c\ %p%%\ %{&paste?'[PASTE]':''}
 
 set nu
 nnoremap <silent><Leader>n :set nonu!<CR>
