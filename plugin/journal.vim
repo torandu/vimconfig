@@ -11,10 +11,11 @@ function! s:EditJournal()
     edit `=l:fname`
     if empty(filereadable(l:fname))
         put='# JOURNAL=> ' . strftime('%a %d %b %Y')
+        put=''
         put='# TODAY'
         put='# DONE'
         put='# NEXT'
         put='# NOTES'
-        exec 'normal! 3G'
+        exec 'normal! 4G'
     endif
 endfunction
