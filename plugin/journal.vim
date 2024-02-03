@@ -1,6 +1,6 @@
 " Vim plugin for creating and editing journal files
 
-command! -nargs=0 Ej call s:EditJournal() | delcommand Ej
+command! -nargs=0 Ej call s:EditJournal()
 
 function! s:EditJournal()
     let l:dirname = $HOME . '/notes/journal'
