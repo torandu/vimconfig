@@ -76,6 +76,10 @@ inoremap <Leader>fn <C-R>=expand("%:t")<CR>
 iab <expr> dtn strftime("%c")
 iab <expr> dtd strftime("%a %d %b %Y")
 
+iabbrev hb #!/usr/bin/env bash<CR>set -eu -o pipefail<CR>
+iabbrev hp #!/usr/bin/env python3<CR>
+iabbrev ifm if __name__ == '__main__':<CR>
+
 augroup closeOnQuit
     autocmd!
     autocmd QuitPre * exe "lclose|cclose"
